@@ -1,0 +1,12 @@
+//After installing KOPS, we need to create a connection between an s3 bucket and KOPS in the server
+## making a bucket
+aws s3 ls
+aws s3 mb s3://flm.harsha
+
+## creating connection between KOPS and S3 bucket
+
+export KOPS_STATE_STORE=s3://flm.harsha
+
+## creating a cluster in server after connection with s3 
+
+kops create cluster --name harsha.k8.local --zones=ap-south-2a,ap-south-2b --master-size m7.i.flex.large --master-volume-size 15 --master-count 1 --node-size t3.micro --node-volume-size 8 --node-count 2 --image=ami-0199ac7c9fbf9ed83
