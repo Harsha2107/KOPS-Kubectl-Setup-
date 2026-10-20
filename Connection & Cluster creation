@@ -9,4 +9,4 @@ export KOPS_STATE_STORE=s3://flm.harsha
 
 ## creating a cluster in server after connection with s3 
 
-kops create cluster --name harsha.k8.local --zones=ap-south-2a,ap-south-2b --control-plane-size m7.i.flex.large --control-plane-volume-size 15 --control-plane-count 1 --node-size t3.micro --node-volume-size 8 --node-count 2 --image=ami-0199ac7c9fbf9ed83
+kops create cluster --name harsha.k8.local --zones=ap-south-2a,ap-south-2b --control-plane-size m7i-flex.large --control-plane-volume-size 15 --control-plane-count 1 --node-size t3.micro --node-volume-size 8 --node-count 2 --image=ami-0199ac7c9fbf9ed83
