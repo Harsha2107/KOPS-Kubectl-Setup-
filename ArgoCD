@@ -12,3 +12,9 @@ helm upgrade argocd argo/argo-cd \
   --namespace argocd \
   --reuse-values \
   --set server.service.type=LoadBalancer
+
+# to know the password
+
+kubectl -n argocd get secret argocd-initial-admin-secret \
+  -o jsonpath='{.data.password}' | base64 -d
+echo
