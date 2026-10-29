@@ -1,0 +1,5 @@
+curl -fsSLO https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+less get-helm-3          
+chmod 700 get-helm-3
+./get-helm-3
+helm version
