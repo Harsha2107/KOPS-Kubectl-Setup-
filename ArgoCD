@@ -4,3 +4,11 @@ helm repo update
 helm upgrade --install argocd argo/argo-cd \
   --namespace argocd \
   --create-namespace
+
+
+#changing from clusterip to argocd
+
+helm upgrade argocd argo/argo-cd \
+  --namespace argocd \
+  --reuse-values \
+  --set server.service.type=LoadBalancer
